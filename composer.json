@@ -1,0 +1,43 @@
+{
+  "name": "api-api/structure-cleverreach",
+  "description": "Structure implementation for Cleverreach.",
+  "version": "1.0.0",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "api-api",
+    "structure",
+    "structure-cleverreach"
+  ],
+  "homepage": "http://awesome.ug",
+  "authors": [
+    {
+      "name": "Sven Wagener",
+      "email": "sven@awesome.ug",
+      "homepage": "http://awesome.ug",
+      "role": "Head of Development"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/api-api/structure-cleverreach/issues"
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "autoload": {
+    "psr-4": {
+      "APIAPI\\Structure_Cleverreach\\": "src/Structure_Cleverreach/"
+    },
+    "files": [
+      "src/structure-cleverreach.php"
+    ]
+  },
+  "require": {
+    "api-api/core": "dev-master",
+    "api-api/authenticator-bearer": "dev-master",
+    "api-api/transporter-curl": "dev-master"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.7",
+    "codeclimate/php-test-reporter": "dev-master"
+  }
+}

@@ -1,0 +1,14 @@
+language: php
+php:
+- 5.6
+- 7.0
+- 7.1
+- 7.2
+script:
+- vendor/bin/phpunit --version
+- vendor/bin/phpunit
+before_install:
+- if [[ ${TRAVIS_PHP_VERSION:0:3} == "5.5" ]]; then composer require --dev --no-update
+  phpunit/phpunit ~4; fi
+install:
+- composer install
