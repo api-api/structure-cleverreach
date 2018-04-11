@@ -35,6 +35,30 @@ if ( ! class_exists( 'APIAPI\Structure_Cleverreach\Structure_Cleverreach' ) ) {
 
 			$this->authenticator = 'bearer';
 
+			$this->routes['/login.json'] = array(
+				'methods' => array(
+					Method::POST  => array(
+						'description'          => 'Get Token',
+						'needs_authentication' => false,
+						'request_data_type'    => 'json',
+						'params'               => array(
+							'client_id'        => array(
+								'description' => 'Client ID for Cleverreach',
+								'type'        => 'integer',
+							),
+							'login'        => array(
+								'description' => 'Login for Cleverreach',
+								'type'        => 'string',
+							),
+							'password'        => array(
+								'description' => 'Password for Cleverreach',
+								'type'        => 'string',
+							)
+						)
+					)
+				)
+			);
+
 			$this->routes['/clients.json'] = array(
 				'methods' => array(
 					Method::GET  => array(
