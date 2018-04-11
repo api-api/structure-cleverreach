@@ -54,6 +54,42 @@ if ( ! class_exists( 'APIAPI\Structure_Cleverreach\Structure_Cleverreach' ) ) {
 					)
 				)
 			);
+
+			$this->routes['/groups.json'] = array(
+				'methods' => array(
+					Method::GET  => array(
+						'description'          => 'Get Groups',
+						'needs_authentication' => true,
+						'request_data_type'    => 'json',
+						'params'               => array(
+							'order'        => array(
+								'description' => 'Order by statement (created ASC oder DESC, changed ASC or DESC).',
+								'type'        => 'string',
+							)
+						)
+					),
+					Method::POST  => array(
+						'description'          => 'Adds a Group',
+						'needs_authentication' => true,
+						'request_data_type'    => 'json',
+						'params'               => array(
+							'name'        => array(
+								'description' => 'Name of the group',
+								'type'        => 'string',
+							)
+						)
+					)
+				)
+			);
+
+			$this->routes['/groups.json/(?P<id>[\\d]+)'] = array(
+				'methods' => array(
+					Method::DELETE  => array(
+						'description'          => 'Deletes a Group',
+						'needs_authentication' => true
+					)
+				)
+			);
 		}
 	}
 }
